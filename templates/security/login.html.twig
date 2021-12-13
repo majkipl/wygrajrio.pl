@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Remington - Wygraj Rio - Logowanie{% endblock %}
+
+{% block body %}
+    <section class="login" id="login">
+        <div class="wrap">
+            <h2>Zaloguj</h2>
+
+            <div class="row">
+                <form method="post">
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    {% if app.user %}
+                        <div class="mb-3">
+                            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                        </div>
+                    {% endif %}
+
+                    <div class="column">
+                        <div class="element">
+                            <p>Email:</p>
+                            <p><input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus></p>
+                        </div>
+
+                        <div class="element">
+                            <p>Password:</p>
+                            <p><input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required></p>
+                        </div>
+
+                        <div class="element">
+                            <input type="hidden" name="_csrf_token"
+                                   value="{{ csrf_token('authenticate') }}"
+                            >
+
+                            <button class="btn btn-lg btn-primary" type="submit">
+                                Zaloguj
+                            </button>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+    </section>
+
+
+
+
+{% endblock %}
