@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Remington - Wygraj Rio{% endblock %}
+
+{% block body %}
+
+    <img src="{{ asset('/images/1537.jpg') }}" alt="party" class="bg-fixed" />
+
+    {% include 'default/section/slider.html.twig' %}
+
+    {% include 'default/section/award.html.twig' %}
+
+    {% include 'default/section/take.html.twig' %}
+
+    <section id="trigger1" class="spacer s0"></section>
+
+    {% include 'default/section/lax-one.html.twig' %}
+
+    {% include 'default/section/vote.html.twig' %}
+
+    {% include 'default/section/thumb.html.twig' %}
+
+    {% include 'default/section/rating.html.twig' %}
+
+    <section id="trigger3" class="spacer s0"></section>
+
+    {% include 'default/section/lax-two.html.twig' %}
+
+    {% include 'default/section/product.html.twig' %}
+
+    {% include 'default/section/about.html.twig' %}
+
+    {% include 'default/section/contact.html.twig' %}
+
+{% endblock %}

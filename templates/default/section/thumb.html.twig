@@ -1,0 +1,26 @@
+<section class="thumbs" id="thumbs">
+    <div class="wrap">
+        <div class="row">
+
+            {% for item in applications %}
+                <article id="post_{$player.id}">
+                    <div class="box" style="background-image: url({{ asset('/uploads/' ~ item.imgReceipt) }});">
+                        <a class="cloud" href="{{ path('app_application_show', {'id': item.id}) }}"><span>{{ item.firstname() }}<br />{{ item.lastname }}</span></a>
+                    </div>
+                    <div class="social">
+                        <a href="{$player.redirect_url}" class="like"> 0</a>
+                        <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http://wygrajrio.pl/gracz/id,{$player.id}" class="share"></a>
+                    </div>
+                </article>
+            {% endfor %}
+
+            <div class="clear"></div>
+        </div>
+
+        <div class="row">
+            <a href="#rating" class="tobottom"></a>
+        </div>
+
+        <div class="clear"></div>
+    </div>
+</section>
