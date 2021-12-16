@@ -1,0 +1,39 @@
+{% extends 'panel.html.twig' %}
+
+{% block title %}Remington - Wygraj Rio - panel - Zgłoszenia{% endblock %}
+
+{% block body %}
+    <section id="flashlight">
+        <div class="wrap">
+            <h2>DODANE ZGŁOSZENIA</h2>
+
+            <div class="row">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>id</td>
+                            <td>Imię</td>
+                            <td>Nazwisko</td>
+                            <td>E-mail</td>
+                            <td>Operacje</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in items %}
+                        <tr>
+                            <td>{{ item.id }}</td>
+                            <td>{{ item.firstname }}</td>
+                            <td>{{ item.lastname }}</td>
+                            <td>{{ item.email }}</td>
+                            <td>
+                                <a href="{{ path('app_panel_application_delete', {'id': item.id}) }}" class="remove">usuń</a>
+                                <a href="{{ path('app_panel_application_show', {'id': item.id}) }}" class="show">zobacz</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+{% endblock %}

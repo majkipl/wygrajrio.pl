@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Remington - Wygraj Rio - Zgłoszenie{% endblock %}
+
+{% block body %}
+    <section class="player" id="player">
+        <div class="wrap">
+            <h2>{{ application.firstname }} {{application.lastname}}</h2>
+
+            <div class="row">
+                <div class="box">
+                    <div class="photo">
+                        <img src="{{ asset('/uploads/' ~ application.imgReceipt) }}" alt="photo" style="display: block;"
+                             class="player-photo">
+                        <div class="before"></div>
+                    </div>
+                    <div class="social">
+                        <a href="{$player.redirect_url}" class="like"> 0</a>
+                        <a target="_blank"
+                           href="http://www.facebook.com/sharer/sharer.php?u=http://wygrajrio.pl/zgloszenie/id,{{ application.id }}"
+                           class="share"></a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+{% endblock %}

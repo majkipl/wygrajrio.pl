@@ -1,0 +1,79 @@
+{% extends 'panel.html.twig' %}
+
+{% block title %}Remington - Wygraj Rio - Panel - Zgłoszenie{% endblock %}
+
+{% block body %}
+    <section class="player" id="player">
+        <div class="wrap">
+            <h2>{{ application.firstname }} {{application.lastname}}</h2>
+
+            <table>
+                <tbody>
+                <tr>
+                    <td>Imię:</td>
+                    <td>{{ application.firstname }}</td>
+                </tr>
+                <tr>
+                    <td>Nazwisko:</td>
+                    <td>{{ application.lastname }}</td>
+                </tr>
+                <tr>
+                    <td>E-mail:</td>
+                    <td>{{ application.email }}</td>
+                </tr>
+                <tr>
+                    <td>Paragon:</td>
+                    <td>{{ application.paragon }}</td>
+                </tr>
+                <tr>
+                    <td>Produkt:</td>
+                    <td>{{ application.product }}</td>
+                </tr>
+                <tr>
+                    <td>Data urodzenia:</td>
+                    <td>{{ application.birth.format('Y-m-d') }}</td>
+                </tr>
+                <tr>
+                    <td>Sklep:</td>
+                    <td>{{ application.shop.name }}</td>
+                </tr>
+                <tr>
+                    <td>Kategoria:</td>
+                    <td>{{ application.category.name }}</td>
+                </tr>
+                <tr>
+                    <td>Skąd wiesz o akcji:</td>
+                    <td>{{ application.fromWhere.name }}</td>
+                </tr>
+                <tr>
+                    <td>Legal A:</td>
+                    <td>{% if (application.legalA) %}TAK{% else %}NIE{% endif %}</td>
+                </tr>
+                <tr>
+                    <td>Legal B:</td>
+                    <td>{% if (application.legalB) %}TAK{% else %}NIE{% endif %}</td>
+                </tr>
+                <tr>
+                    <td>Legal C:</td>
+                    <td>{% if (application.legalC) %}TAK{% else %}NIE{% endif %}</td>
+                </tr>
+                <tr>
+                    <td>Legal D:</td>
+                    <td>{% if (application.legalD) %}TAK{% else %}NIE{% endif %}</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="row">
+                <div class="box">
+                    <div class="photo">
+                        <img src="{{ asset('/uploads/' ~ application.imgReceipt) }}" alt="photo" style="display: block;"
+                             class="player-photo">
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+{% endblock %}

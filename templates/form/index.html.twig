@@ -1,0 +1,223 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Remington - Wygraj Rio - Formularz{% endblock %}
+
+{% block body %}
+    <section class="form" id="trip">
+        <div class="wrap">
+            <h2>WYGRAJ KARNAWAŁ W RIO</h2>
+
+            <div class="row">
+                <p>Pokaż nam swoją stylizację na Karnawał w RIO, oczaruj Jury i <span class="color"><strong>wygraj wyjazd na najlepszą imprezę świata!</strong></span>
+                    A znajomych namów do głosowania - nagrody dodatkowe czekają!</p>
+            </div>
+
+            <div class="row">
+                <div class="box">
+                    <p>1. <span class="color"><strong>WYPEŁNIJ</strong></span> <br/>formularz ze swoją stylizacją</p>
+                </div>
+                <div class="box">
+                    <p>2. <span class="color"><strong>NAMÓW</strong></span> <br/>znajomych do głosowania</p>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+
+            {{ form_start(form) }}
+            <div class="row">
+                <div class="form-table">
+                    <div class="form-table-row">
+                        <div class="form-table-cell">
+                            <div class="element">
+                                <p>IMIĘ:</p>
+                                <p>{{ form_widget(form.firstname) }}</p>
+                                <p class="error-post"></p>
+                            </div>
+                        </div>
+                        <div class="form-table-cell">
+                            <div class="element">
+                                <p>DATA URODZENIA:</p>
+                                <p>{{ form_widget(form.birth) }}
+                                </p>
+                                <p class="error-post"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-table-row">
+                        <div class="form-table-cell">
+                            <div class="element">
+                                <p>NAZWISKO:</p>
+                                <p>{{ form_widget(form.lastname) }}</p>
+                                <p class="error-post"></p>
+                            </div>
+                        </div>
+                        <div class="form-table-cell">
+                            <div class="element">
+                                <p>NR PARAGONU:</p>
+                                <p>{{ form_widget(form.paragon) }}</p>
+                                <p class="error-post"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-table-row">
+                        <div class="form-table-cell">
+                            <div class="element">
+                                <p>E-MAIL:</p>
+                                <p>{{ form_widget(form.email) }}</p>
+                                <p class="error-post"></p>
+                            </div>
+                        </div>
+                        <div class="form-table-cell">
+                            <div class="element">
+                                <p>POTWIERDŹ NR PARAGONU:</p>
+                                <p>{{ form_widget(form.paragon_repeat) }}</p>
+                                <p class="error-post"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-table-row">
+                        <div class="form-table-cell">
+                            <div class="element">
+                                <p>DODAJ ZDJĘCIE:</p>
+
+                                <div class="file-uploads field-uploads">
+                                    <div class="uploads uploads-receipt d-none">
+                                        {{ form_widget(form.img_receipt) }}
+                                    </div>
+
+                                    <img class="file-img" id="application_form_img_receipt_thumb"
+                                         src="{{ asset('/images/1423.png') }}"
+                                         alt="Zdjęcie dowodu zakupu"/>
+
+                                    <button class="button file-button button-uploads" type="button">Wybierz plik
+                                    </button>
+                                </div>
+                                <p class="error-post" id="application_form_img_receipt_error"></p>
+                            </div>
+                        </div>
+                        <div class="form-table-cell">
+                            <div class="element">
+                                <p>SKLEP:</p>
+                                <p>{{ form_widget(form.shop) }}</p>
+                                <p class="error-post"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-table-row">
+                        <div class="form-table-cell">
+                            <div class="element">
+                                <p>NR TELEFONU:</p>
+                                <p>{{ form_widget(form.phone) }}</p>
+                                <p class="error-post"></p>
+                            </div>
+                        </div>
+                        <div class="form-table-cell">
+                            <div class="element">
+                                <p>KATEGORIA:</p>
+                                <p>{{ form_widget(form.category) }}</p>
+                                <p class="error-post"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-table-row">
+                        <div class="form-table-cell">
+                            <div class="element">
+                                <p>SKĄD WIESZ O AKCJI?:</p>
+                                <p>{{ form_widget(form.from_where) }}</p>
+                                <p class="error-post"></p>
+                            </div>
+                        </div>
+                        <div class="form-table-cell">
+                            <div class="element">
+                                <p>PRODUKT:</p>
+                                <p>{{ form_widget(form.product) }}</p>
+                                <p class="error-post"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-table">
+                    <div class="form-table-row">
+                        <div class="form-table-cell-full">
+                            <div class="element">
+                                {{ form_row(form.legal_a) }}
+                                <p class="error-post"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-table-row">
+                        <div class="form-table-cell-full">
+                            <div class="element">
+                                {{ form_row(form.legal_b) }}
+                                <p class="error-post"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-table-row">
+                        <div class="form-table-cell-full">
+                            <div class="element">
+                                {{ form_row(form.legal_c) }}
+                                <p class="error-post"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-table-row">
+                        <div class="form-table-cell-full">
+                            <div class="element">
+                                {{ form_row(form.legal_d) }}
+                                <p class="error-post"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clear"></div>
+
+            <div class="row">
+                <button type="submit" name="submit"></button>
+            </div>
+
+            <div class="clear"></div>
+
+            {{ form_end(form) }}
+
+            <div class="row">
+                <h3>UWAGA</h3>
+
+                <ul class="border">
+                    <li>
+                        <p>Telefon zostanie wykorzystany wyłącznie w celach organizacyjnych - w przypadku potrzeby
+                            pilnego
+                            kontaktu z uczestnikami</p>
+                    </li>
+                    <li>
+                        <p>Biorąc udział w Konkursie jako Uczestnik oświadczasz, że zarówno Ty jak i Twoja osoba
+                            towarzysząca jesteście pełnoletni i dyspozycyjni w terminie wyjazdu do Rio de Janeiro oraz,
+                            że
+                            posiadacie paszporty ważne co najmniej 180 dni od daty wylotu do Brazylii.</p>
+                    </li>
+                    <li>
+                        <p>Pamiętaj, że w trakcie Konkursu, Organizator ma prawo zweryfikować Twoje zgłoszenie prosząc
+                            Cię o
+                            przesłanie drogą mailową skanów lub zdjęć dowodu zakupu produktu i kodu kreskowego z
+                            opakowania. </p>
+                    </li>
+                    <li>
+                        <p>2 stycznia 2015 r. Organizator poinformuje drogą mailową o wyniku obrad Jury zwycięzcę oraz 4
+                            finalistów. Każdy z w/w Uczestników zostanie poproszony o przekazanie w określonym terminie
+                            kopii dowodu zakupu, oryginalnego kodu kreskowego wyciętego z opakowania zakupionego
+                            produktu
+                            oraz numerów paszportów (własnego i osoby towarzyszącej). Spełnienie wymienionych wymogów
+                            jest
+                            warunkiem koniecznym do otrzymania nagrody głównej.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <br/><br/>
+
+            <div class="clear"></div>
+        </div>
+    </section>
+{% endblock %}
